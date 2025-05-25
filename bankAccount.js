@@ -47,9 +47,10 @@ class SavingAccount extends BankAccount {
         this.interestRate = interestRate
     }
     addInterest() {
-        let interest = this.getBalance * this.interestRate
+        let interest = this.getBalance() * this.interestRate
         this.deposit(interest)
         return this
+        
     } 
 }
 
@@ -68,7 +69,12 @@ class SavingAccount extends BankAccount {
 // console.log(new SavingAccount(0.01, 800000).addInterest().addInterest().addInterest());
 
 
-console.log(new SavingAccount("Budi", 10_000_000).addInterest().getBalance());
+// console.log(new SavingAccount("Budi", 10_000_000).addInterest().getBalance());
+
+let budiBalance = new SavingAccount("Budi", 10_000_000).addInterest().getBalanceReport()
+console.log(budiBalance);
+
+
 
 
 
